@@ -1,4 +1,4 @@
-# MrTambourineMarkovMan
+# Mr. Tambourine Markov Man
 
 **Markov Chain Generated Dylan Lyrics**
 
