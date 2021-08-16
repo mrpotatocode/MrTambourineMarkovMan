@@ -23,3 +23,8 @@ _Too Gospel Years if you ask me..._
 > No, no, babe, I got two white horses following me And there's two white horses following me And there's two white horses following me And you willingly surrender to me, baby Where I live here, baby, Lord, and feel at ease?
 > 
 > To preach of peace and brotherhood Oh, what are you ready?
+
+**DIY**
+
+- [scraper](https://github.com/mrpotatocode/MrTambourineMarkovMan/blob/main/dylan%20scraper.Rmd)
+- [markov or tensorflow](https://github.com/mrpotatocode/MrTambourineMarkovMan/blob/main/dylan%20markov.Rmd)
