@@ -24,7 +24,7 @@ _Too Gospel Years if you ask me..._
 > 
 > To preach of peace and brotherhood Oh, what are you ready?
 
-**DIY**
+## DIY
 
 - [scraper](https://github.com/mrpotatocode/MrTambourineMarkovMan/blob/main/dylan%20scraper.Rmd)
 - [markov or tensorflow](https://github.com/mrpotatocode/MrTambourineMarkovMan/blob/main/dylan%20markov.Rmd)
