@@ -1,0 +1,79 @@
+---
+title: "Untitled"
+author: "Thomas Rosenthal"
+date: "14/08/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(rvest) # to extract text from sites
+library(stringr) # for easier string manipulation
+library(readr) # to read text files
+library(tidytext) # for natural language processing
+library(dplyr) # for easier data manipulation
+library(tidyr) # to make data wide and long
+library(jsonlite) # to deal with json files
+```
+
+```{r}
+raw_data <- read_html("http://www.bobdylan.com/songs/")
+```
+
+
+```{r}
+songs <- raw_data %>% 
+  html_nodes('div [id="item-list"]') %>% 
+  html_nodes('a') %>% 
+  html_attr("href") 
+```
+
+```{r}
+URLs_generation <- tibble(raw_text = songs)
+```
+
+
+```{r}
+URLs_generation <- URLs_generation %>% filter(str_detect(raw_text, 'songs')) %>% distinct()
+```
+
+
+```{r}
+scrape <- function(url) {
+  
+   url_html <- read_html(url)
+  
+  lyrics <- 
+    url_html %>% 
+    html_node('div [class="article-content lyrics"]') %>% 
+    html_text()
+  
+  title <- 
+    url_html %>% 
+    html_node('h2') %>% 
+    html_text()
+  
+  
+  Sys.sleep(2.5)
+  
+  tibble(title = title, lyrics = lyrics)
+}
+```
+
+
+```{r}
+all_lyrics <- purrr::map_dfr(URLs_generation[["raw_text"]], scrape)
+```
+
+```{r}
+library()
+write_csv(all_lyrics, 'Dylan Lyrics.csv')
+```
+
+
+
+
+
