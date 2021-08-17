@@ -101,7 +101,7 @@ two <- sample(bigram_sep$word2, 1, replace = FALSE)
 
 
 
-
+### MARKOV PART, FAST
 ```{r}
 library(markovifyR)
 markov_model <-  generate_markovify_model(
@@ -125,6 +125,8 @@ return_message = TRUE
 )
 ```
 
+
+### TENSORFLOW PART, SLOW -- LIKE ACTUALLY SO SLOW
 ```{r}
 library(keras)
 library(tokenizers)
